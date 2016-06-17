@@ -15,6 +15,7 @@ angular.module('buttons', [])
             $scope.things[$scope.activeThingIndex].classes = "button inactive";
             //sets the new one to active
             $scope.things[ind].classes = "button active";
+            $scope.activeThingIndex = ind;
         };
 
         //init the classes in Things array when you load the page
