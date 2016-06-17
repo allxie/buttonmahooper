@@ -1,0 +1,13 @@
+.button{
+    padding: 100px;
+}
+.button:hover{
+    background-color: grey;
+    cursor: pointer;
+}
+.active{
+    border: 2px solid red;
+}
+.inactive{
+
+}

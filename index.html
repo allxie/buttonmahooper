@@ -1,0 +1,18 @@
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div ng-app="buttons">
+    <div ng-controller="ThoseButtonsCtrl">
+        <div ng-repeat="thing in things track by $index">
+            <div ng-class="thing.classes" ng-click="activate($index)">
+                {{thing.name}}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
