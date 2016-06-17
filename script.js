@@ -8,19 +8,24 @@ angular.module('buttons', [])
             {name: "truck"},
             {name: "phone"}
         ];
+        $scope.activeThingIndex = 0;
         //Takes an index of the 'thing' that should have the class 'active'.
         $scope.activate = function(ind){
-            //takes all of the things and makes them have class button inactive
-            // (even if there wasn't a thing.class yet)
-            for(var i = 0; i < $scope.things.length; i++){
-                $scope.things[i].classes = "button inactive";
-            }
+            //Sets the previously active button to inactive
+            $scope.things[$scope.activeThingIndex].classes = "button inactive";
+            //sets the new one to active
             $scope.things[ind].classes = "button active";
         };
 
         //init the classes in Things array when you load the page
-        // We pass in 0 so that the 0th item in the list has class 'button active'
-        $scope.activate(0);
+        $scope.initDataWithClasses = function() {
+            for(var i = 0; i < $scope.things.length; i++){
+                $scope.things[i].classes = "button inactive";
+            }
+            $scope.things[0].classes = "button active";
+
+        };
+        $scope.initDataWithClasses();
         //the resulting $scope.things will look like...
         //  [
         //    {name: "water bottle", classes:"button active"},
